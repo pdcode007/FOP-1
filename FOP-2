@@ -1,0 +1,57 @@
+#include<stdio.h>
+void main()
+{
+  int a,b,sum,dif,mul,divi,choice;
+  do
+  {
+     printf("Enter choice\n");
+     printf("1:Addition\n"); 
+     printf("2:Subtraction\n");
+     printf("3:Multiplication\n");
+     printf("4:Division\n");
+     printf("5:Exit\n");
+     scanf("%d",&choice);
+     switch(choice)
+     {
+         case 1:
+         {
+             printf("Enter value of num 1 and num 2\n");
+             scanf("%d%d",&a,&b);
+             sum=a+b;
+             printf("The sum is %d\n",sum);
+             break;
+         }
+        case 2:
+        {
+            printf("Enter value of num 1 and num 2\n");
+            scanf("%d%d",&a,&b);
+            dif=a-b;
+            printf("The dif is %d\n",dif);
+            break;
+        }
+        
+        case 3:
+        {
+            printf("Enter value of num 1 and num 2\n");
+            scanf("%d%d",&a,&b);
+            mul=a*b;
+            printf("The product is %d\n",mul);
+            break;
+        }
+        case 4:
+        {
+            printf("Enter value of num 1 and num 2\n");
+            scanf("%d%d",&a,&b);
+            sum=a/b;
+            printf("The remainder is %d\n",sum);
+            break;
+        }
+        case 5:
+        break;
+        default:
+        {
+            printf("Entered choice is invalid\n");
+        }
+     }
+  }while(choice!=5);
+}
