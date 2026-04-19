@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Employee
+{
+    int id;
+    char name[50];
+    char gender;
+    float salary;
+    char designation[50];
+};
+
+void totalEmployees(int n)
+{
+    printf("Total number of employees = %d\n", n);
+}
+
+void countGender(struct Employee e[], int n)
+{
+    int male = 0, female = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(e[i].gender == 'M' || e[i].gender == 'm')
+            male++;
+        else if(e[i].gender == 'F' || e[i].gender == 'f')
+            female++;
+    }
+
+    printf("Male employees = %d\n", male);
+    printf("Female employees = %d\n", female);
+}
+
+void salaryAbove10k(struct Employee e[], int n)
+{
+    printf("Employees with salary > 10000:\n");
+
+    for(int i = 0; i < n; i++)
+    {
+        if(e[i].salary > 10000)
+            printf("%s\n", e[i].name);
+    }
+}
+
+void assistantManager(struct Employee e[], int n)
+{
+    printf("Employees with designation Assistant Manager:\n");
+
+    for(int i = 0; i < n; i++)
+    {
+        if(strcmp(e[i].designation, "Assistant Manager") == 0)
+            printf("%s\n", e[i].name);
+    }
+}
+
+int main()
+{
+    int n;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    struct Employee e[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        printf("\nEnter details for employee %d\n", i + 1);
+
+        printf("ID: ");
+        scanf("%d", &e[i].id);
+
+        printf("Name: ");
+        scanf("%s", e[i].name);
+
+        printf("Gender (M/F): ");
+        scanf(" %c", &e[i].gender);
+
+        printf("Salary: ");
+        scanf("%f", &e[i].salary);
+
+        printf("Designation: ");
+        scanf(" %[^\n]", e[i].designation);
+    }
+
+    printf("\n--- Results ---\n");
+
+    totalEmployees(n);
+    countGender(e, n);
+    salaryAbove10k(e, n);
+    assistantManager(e, n);
+
+    return 0;
+}
