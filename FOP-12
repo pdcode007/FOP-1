@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b, i, gcd, scd = -1;
+    int x, y, temp;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+
+    x = a;
+    y = b;
+
+    while(y != 0)
+    {
+        temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    gcd = x;
+
+    for(i = 2; i <= (a < b ? a : b); i++)
+    {
+        if(a % i == 0 && b % i == 0)
+        {
+            scd = i;
+            break;
+        }
+    }
+
+    printf("GCD = %d\n", gcd);
+
+    if(scd == -1)
+        printf("No common divisor other than 1\n");
+    else
+        printf("Smallest Common Divisor (>1) = %d\n", scd);
+
+    return 0;
+}
