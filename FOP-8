@@ -1,0 +1,25 @@
+#include <stdio.h>
+void main()
+{
+    int marks[5],i,total=0;
+    float perc;
+    printf("Enter marks of students\n");
+    for(i=0;i<5;i++)
+    scanf("%d",&marks[i]);
+    for(i=0;i<5;i++)
+    total=total+marks[i];
+    perc=total/5;
+    printf("The percentage obtained is %f\n",perc);
+    if(perc>=75)
+    printf("Student passes with distinction\n");
+    else if(perc>=60 && perc<75)
+    printf("Student passes in First division\n");
+    else if(perc>=50 && perc<60)
+    printf("Student passes in Second division\n");
+    else if(perc>=40 && perc<50)
+    printf("Student passes in Third division\n");
+    else if(perc<40)
+    printf("Student fails\n");
+    else
+    printf("Invalid percentage\n");
+}
