@@ -1,0 +1,15 @@
+#include<stdio.h>
+void main()
+{
+    float base_pay, gross_sal,net_sal;
+    float HRA, TA,tax;
+    printf("Enter Basic pay of Employee\n");
+    scanf("%f", &base_pay);
+    HRA=0.1*base_pay;
+    TA=0.05*base_pay;
+    gross_sal=base_pay+HRA+TA;
+    tax=gross_sal*0.02;
+    net_sal=gross_sal-tax;
+    printf("The gross salaray is %f\n",gross_sal);
+    printf("The net salary is %f\n",net_sal);
+}
