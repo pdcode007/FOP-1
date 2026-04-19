@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include<math.h>
+void main()
+{
+    int a,b,choice,sum, dif,mul,div,power,factorial=1;
+    do
+    {
+    printf("Enter choice\n");
+    printf("1:Addition\n");
+    printf("2:Subtraction\n");
+    printf("3:Multiplication\n");
+    printf("4:Division\n");
+    printf("5:Power\n");
+    printf("6:Factorial\n");
+    printf("7:Exit\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        {
+            printf("Enter 2 numbers\n");
+            scanf("%d%d",&a,&b);
+            sum=a+b;
+            printf("The sum is %d\n",sum);
+            break;
+        }
+        case 2:
+        {
+            printf("Enter 2 numbers\n");
+            scanf("%d%d",&a,&b);
+            dif=a-b;
+            printf("The difference is %d\n",dif);
+            break;
+        }
+        case 3:
+        {
+            printf("Enter 2 numbers\n");
+            scanf("%d%d",&a,&b);
+            mul=a*b;
+            printf("The product is %d\n",mul);
+            break;
+        }
+        case 4:
+        {
+            printf("Enter 2 numbers\n");
+            scanf("%d%d",&a,&b);
+            div=a/b;
+            printf("The remainder is %d\n",div);
+            break;
+        }
+        case 5:
+        {
+            printf("Enter base and exponent\n");
+            scanf("%d%d",&a,&b);
+            power=pow(a,b);
+            printf("The power is %d\n",power);
+            break;
+        }
+        case 6:
+        {
+            printf("Enter 1 number\n");
+            scanf("%d",&a);
+            for(int i=a;i>0;i--)
+            factorial=factorial*i;
+            printf("The factorial is %d\n",factorial);
+            break;
+        }
+        case 7:
+        {
+            break;
+        }
+        default:
+        {
+        printf("INvalid choice entered");
+        break;
+        }
+    }
+    }while(choice!=7);
+}
