@@ -1,0 +1,46 @@
+#include <stdio.h>
+int fac_rec(int num)
+{
+    if(num==0||num==1)
+    return 1;
+    else
+    {
+        int factorial=1;
+        return num*fac_rec(num-1);
+    }
+}
+
+int fac_withoutrec(int num)
+{
+    int i,factorial=1;
+    for(i=num;i>0;i--)
+    {
+        factorial=factorial*i;
+    }
+    return factorial;
+}
+void main()
+{
+    int choice,num;
+    printf("Enter choice\n");
+    printf("1:Factorial with recursion\n");
+    printf("2:Factorial without recursion\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        {
+            printf("Enter Number\n");
+            scanf("%d",&num);
+            printf("The factorial is %d",fac_rec(num));
+            break;
+        }
+        case 2:
+        {
+            printf("Enter Number\n");
+            scanf("%d",&num);
+            printf("The factorial is %d",fac_withoutrec(num));
+            break;
+        }
+    }
+}
