@@ -1,0 +1,24 @@
+#include <stdio.h>
+struct stud
+{
+    char name[10];
+    float sub1,sub2,sub3;
+    float perc;
+};
+void main()
+{
+    struct stud s[10];
+    int n,total;
+    printf("Enter number of students\n");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        printf("Enter Name of student %d\n",i);
+        scanf("%s",&s[i].name[10]);
+        printf("Enter marks of 3 subjects\n");
+        scanf("%f%f%f",&s[i].sub1,&s[i].sub2,&s[i].sub3);
+        total=s[i].sub1+s[i].sub2+s[i].sub3;
+        s[i].perc=total/3;
+        printf("Percentage of student %d is %f\n",i,s[i].perc);
+    }
+}
